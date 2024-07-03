@@ -1,0 +1,1241 @@
+/*
+***************************************************************************************************************************************   
+*          |                                                                                                                          *    
+*          |                           WDD11 - Capstone Project                                                                       *    
+*     ▐  ▐ | ▌  ▌                                                                                                                     *        
+*     ▐▌ █▐█▌█ ▐▌                                                                                                                     *   
+*     █▄▀▄███▄▀▄█                                                                                                                     *   
+*      ▄  ███▌ ▄                                     Lau Ka Chun                                                                      *   
+*    ▄▀ █▀███▀█ ▀▄                                                                                                                    *     
+*    ▐▌▐ ▐▌ ▐▌ ▌▐▌                                                                                                                    *     
+*     ▐ ▐     ▌ ▌                                         ..... .                                                           ...       *     
+*                                                    .."":     : ".                                                  .""""": : :      *        
+*                                                  ."    :      :  :                                             ..."4  :  : : :      *    
+*                                                ..:     .:....":"" :                                           :---.$  :  : : ".     *    
+*                                               :  : ..." :     :    :                                          :--..$..:$$$": : :    *    
+*                                              :   .".     :    :     :                                         :---.:  :  : : : "    *    
+*                                             :  ."  ".   .:.""":""..":                                         ".--.:  :  : : :".    *    
+*                                             :.".     :."  :   :   : d:                                        : --.$..:.."": :  :   *    
+*                                             :   ". ." :   :...:  ."d$:                                         "&$$$  :  : : : ."   *    
+*                                             :  ." ".  .:"" :  :"":d$$":                                         :: :  :  : : ::     *    
+*                                              :p,.   ":" ". :  : d$$P  ;                                        : : :..:.$$.: :".    *    
+*                                              :$$$$p."".  ":-:":d$$P   :                                    .....": :  :  :  ": :    *    
+*                                              :$$"$$$$$p:--:-:-:$$P   :                                   d$$$$"  : "..:  : : :"     *    
+*                                              "$:   "c$$$$p:.:.$$:   d:   ...              ...d&&&&$$D. d$$$$$ :."".:  """$"  :      *    
+*                                               :$p     c$$$: : $$$D d$:""":  """..     .d&&&&&&&&$$$$$$$&$$$" ." :."$. "..": :       *    
+*             ..                                 :$p     :$$:.-:d$$$$$$:   :   :  :"".d&&&&&&&&&&&&&$$$$$&&$$." : :  $$D :  ::        *    
+*          . : :":"..                            ".$$..$$$$P: ..:""$$$$... :   :  :  d&&$&&&&&&&&&$$$$$$$$$$$ : ." ".. $$$$:"         *    
+*        .".": : : : :                            :$$$$$$P"":"  : ... :   ------...:&&$$$&&$$$&&$$$$$$$$$$$$$ :" ". :".:$ :           *    
+*        :.'-.:: : :."                            .:$$$$P.  :."":"   ":.  :    :  d$$$$$$$$$$$$$$$$$$$$$$$$$$"".  ."".d$".:           *    
+*      .".'-..""".:"                           .." :"". : "":    :."".. --..   : d$$$$$$$$$$$$$$$$$$$$$$$$$$$.  ":   d$".."           *    
+*      :.'-.."-.  :..                       .:".: .".. :.   :  ...:  " -.   --..d$$$$$$$$$$$$$$$$$$$$$$$$&$$$$$.: """$".."            *    
+*    .".'-..".  -.". "..                  ." :. ."."- $: "":.""   :."    "..   d$$$$$$$$$$$$$$$$$&&$$$$$&&$$$$$$$..  $ ."             *    
+*   ."._-..".'-..".'-." ":              .":."..."-:-."$$$. :      ::        ".d$$$$$&&$$$$$$$$$&&&$$$$$&&$$$$$$$$$$"  ."              *    
+*   :.  -.  '-..".'-.:".:             .": : .":"-:" :  $$$$$......" ". .    .$$$$$$$&&&&$$$$$&&&$$$$$$$&$$$$$$$$$$$.""                *    
+*   ".:..'-.  .".'-..". ".          .:  ." :-."  $-.:  $$$$$$$$$$$".  : ".."d$$$$$$$$$$&&&$$$$$$$$$$$$$p"'  "                         *    
+*                                                                                                                                     *     
+***************************************************************************************************************************************    
+*/
+
+/* desktop style */
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  background-color: #f7c167;
+  margin: 0;
+}
+
+#wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 6px 10px -4px #000;
+}
+
+/* start of the header's CSS*/
+header {
+  background-color: #f7f3eb;
+  height: 169px;
+  padding: 8px;
+  position: relative;
+  z-index: 2;
+  /*use the flex to seperate logo and right side of the header*/
+  display: -webkit-flex;
+  display: flex;
+  padding: 14px 18px 7px 18px;
+  box-sizing: border-box;
+  box-shadow: 0 6px 10px -4px #000;
+  display: flex;
+}
+
+#logo {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+
+#iconBackground {
+  width: 118px;
+  height: 118px;
+  position: absolute;
+  left: 47px;
+  top: 15px;
+  background: linear-gradient(to right, #5ea2ef, #d12d9c);
+  border-radius: 50%;
+}
+
+#logoIcon {
+  position: absolute;
+  left: 46px;
+  -webkit-fill: #cecac4;
+  fill: #cecac4;
+}
+
+#logoSlogin {
+  position: absolute;
+  bottom: -5px;
+  left: -40px;
+}
+
+.bark {
+  -webkit-animation: bark 1s ease-in-out;
+  animation: bark 1s ease-in-out;
+}
+
+@-webkit-keyframes bark {
+  0% {}
+
+  25% {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  75% {
+    -webkit-transform: rotate(-15deg);
+    ;
+    transform: rotate(-15deg);
+    ;
+  }
+
+  100% {}
+}
+
+@keyframes bark {
+  0% {}
+
+  25% {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  75% {
+    -webkit-transform: rotate(-15deg);
+    ;
+    transform: rotate(-15deg);
+    ;
+  }
+
+  100% {}
+}
+
+/*start of the right side of the header*/
+#headerRight {
+  -webkit-flex-grow: 2;
+  flex-grow: 2;
+  box-sizing: border-box;
+}
+
+/*start of the call to action buttons*/
+#ctas {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+/*Class for CTA button*/
+.button {
+  width: 172px;
+  height: 50px;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  margin-left: 19px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.subscribe {
+  background-color: #773feb;
+}
+
+.subscribe:active {
+  background-color: #6334c4;
+}
+
+.donate {
+  background-color: #ff8c25;
+}
+
+.donate:active {
+  background-color: #ba661b;
+}
+
+/*hide the check box*/
+.disableCheckbox {
+  display: none;
+}
+
+/*end of the call to action buttons*/
+
+/*start of the login and search container*/
+#loginAndSearch {
+  margin-top: 65px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  position: relative;
+  -webkit-align-content: space-around;
+  align-content: space-around;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+/*decorate the login label*/
+#loginAndSearch label {
+  cursor: pointer;
+}
+
+#loginAndSearch label span {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-size: 1.2em;
+}
+
+/*decorate the search box*/
+#headerRight #searchBox {
+  margin-left: 12px;
+  max-width: 201px;
+  height: 25px;
+}
+
+#searchButton {
+  position: absolute;
+  right: 5px;
+  bottom: 8px;
+}
+
+#searchButton:hover {
+  cursor: pointer;
+}
+
+/* end of the header's CSS*/
+
+/*start of the navigation*/
+nav {
+  min-height: 48px;
+  background-color: #606060;
+  position: relative;
+}
+
+/* nav ul#navList { */
+nav ul{
+  margin: 0;
+  padding: 0;
+  /*use flex to display navigator*/
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* nav ul#navList li { */
+nav ul li {
+  list-style-type: none;
+}
+
+nav ul#navList li a {
+  padding: 15px 40px 14px 40px;
+}
+
+nav ul#adminNavList li a {
+  padding: 15px 18px 14px 35px;
+}
+
+nav ul li a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  font-weight: bold;  
+}
+
+nav ul li a:hover {
+  /*scale up the word when hover*/
+  -webkit-transform: scale(1.2) !important;
+  transform: scale(1.2) !important;
+  color: #fff !important;
+}
+
+/*end of the navigation*/
+
+/*start of the main content*/
+main#content {
+  min-height: 400px;
+  background-color: #f8f3eb;
+  padding: 2px 18px 56px 18px;
+  color: #5e5c59;
+  display: block;
+}
+
+#content h1 {
+  color: #de717b;
+  margin-top: 33px;
+}
+
+#content h2 {
+  margin-top: 28px;
+}
+
+/*start of the footer*/
+footer {
+  min-height: 217px;
+  background-color: #7568d8;
+  color: #fff;
+  padding: 16px 18px;
+  position: relative;
+  box-sizing: border-box;
+  /*use flex display*/
+  display: -webkit-flex;
+  display: flex;
+}
+
+/*start of the left footer*/
+#leftFooter {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+
+#leftFooter h1 {
+  font-size: 1.3em;
+}
+
+#leftFooter address {
+  margin-top: 27px;
+  font-style: normal;
+}
+
+#leftFooter p {
+  margin-top: 60px;
+}
+
+/*end of the left footer*/
+/*start of the right footer*/
+#rightFooter a {
+  color: #fff;
+}
+
+#rightFooter #socialMedia {
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 65px;
+  padding: 0;
+}
+
+#socialMedia a {
+  margin-left: 7px;
+}
+
+#socialMedia img{  
+  width: 39px;
+  height: 39px;
+}
+
+#socialMedia a:first-child {
+  margin-left: 0;
+}
+
+/*end of the footer*/
+
+/*start of home page content*/
+/*start of the slide image component*/
+/*the main container*/
+#slideImages {
+  width: 100%;
+  height: 368px;
+  background: linear-gradient(to right, #999 10%, #fff 50%, #999 90%);
+  position: relative;
+  text-align: center;
+  line-height: 750px;
+  padding-bottom: 30px;
+  margin-top: 17px;
+  z-index: 1;
+}
+
+/*slide images container*/
+.slideItem {
+  width: 100%;
+  height: 368px;
+  line-height: 1.5;
+  position: absolute;
+  top: 0;  
+}
+
+.slideItem img {
+  max-width: 100%;
+  height: auto;
+}
+
+.slideNav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  display: none;
+  z-index: 20;
+  cursor: pointer;
+  color: transparent;
+}
+
+/*the arrow appearance*/
+.slideNav::after {
+  display: block;
+  content: '\25B6';
+  font-size: 2em;
+  color: #f3f3f3;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -.5em;
+}
+
+
+/*start of the left arrow*/
+.slideNavPre {
+  left: 0;
+  display: block;
+}
+
+.slideNavPre::after {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  right: auto;
+  left: 10px;
+}
+
+/*end of the left arrow*/
+/*start of the right arrow*/
+.slideNavNext {
+  left: 50%;
+  display: block;
+}
+
+/*end of the right arrow*/
+#slideImages .slideItem {
+  display:none;
+  -webkit-transition: .3s ease-out opacity;
+  transition: .3s ease-out opacity;
+}
+
+/*use input[type=radio] to show images*/
+#slideImages .slideBullet:checked + .slideItem {
+  display:block;
+}
+
+/*class for bullet effect*/
+.slideBullet {
+  font-size: .75em;
+  width: 1em;
+  height: 1em;
+  margin-left: 5px;
+  display: inline-block;
+  position: relative;
+  z-index: 99;
+  /*for KaiOS browser*/
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 1em;
+  -webkit-transition: .3s ease-out background, .3s ease-out transform;
+  transition: .3s ease-out background, .3s ease-out transform;
+}
+
+/*bullet appearance*/
+.slideBullet:checked {
+  background: rgba(153, 153, 153, 0.8);
+  outline: none;
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+/*end of the slide image component*/
+
+/*start of the subscribe box*/
+#content #subsBox {
+  background-image: url(../images/subscribe_background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#content #subsBox div {
+  margin-top: 56px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-evenly;
+  justify-content: space-evenly;
+}
+
+#content #subsBox p {
+  color: #fff;
+  text-shadow: 3px 4px 3px #000;
+}
+
+/*end of home page content*/
+
+/*start of news page content*/
+.newsContainer {
+  display: -webkit-flex;
+  display: flex;
+  box-shadow: 7px 7px 10px 1px #999;
+  background-color: #fff;
+  margin-top: 20px;
+  border-radius: 10px;
+  max-width: 720px;
+  padding: 0;
+}
+
+.newsContainer:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+}
+
+.newsImgContainer {
+  -webkit-flex-grow: 2;
+  flex-grow: 2;
+}
+
+.newsContainer img {
+  border-radius: 10px;
+}
+
+.newsTitle {
+  padding: 60px 20px;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+/*end of news page content*/
+
+/*start of dog training page content*/
+table {
+  /*  Set the border collapse */
+  border-collapse: collapse;
+  border: 1px solid #000;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 20px;
+  background-color: #efefef;
+}
+
+/*set odd number rows background color*/
+tr:nth-of-type(odd) {
+  background-color: #ddd;
+}
+
+td {
+  padding: 15px;
+  border: 1px solid #000;
+}
+
+td ul li {
+  margin: 7px 0;
+}
+
+th {
+  font-weight: 700;
+  height: 30px;
+  background-color: #de717b;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+#trainImgContainer {
+  margin-top: 20px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-evenly;
+  justify-content: space-evenly;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+#trainImgContainer img {
+  border-radius: 50%;
+}
+
+/*end of dog training page content*/
+
+/*start of dog adoption page content*/
+#dogFilterAndSearch{
+  margin-top: 20px;
+  display:flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+#dogFilterAndSearch select,
+#dogFilterAndSearch input{
+  min-width: 60px;
+  min-height: 30px;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+#dogFilterAndSearch button{
+  padding: 8px;
+}
+
+.dogsContainer{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.dogAdopContainer {  
+  margin-top: 20px;
+  margin-right: 55px;
+  border-radius: 10px;
+  max-width: 245px;
+  padding: 0;  
+  background-color: #f8f1fd;
+  box-shadow: 0 6px 10px -4px #000;
+}
+
+.dogAdopContainer:hover{  
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);  
+}
+
+.dogAdopContainer a{  
+  text-decoration: none;
+  color:#000;
+}
+
+.dogAdopImgContainer img {
+  border-radius: 10px 10px 0 0;
+}
+
+.dogAdopInfo {
+  padding: 26px 20px;
+  font-size: 1.2em;  
+}
+
+/*end of dogadoption page content*/
+
+/* start of dogdetail page */
+.dogSlidesContent
+/* .w3-auto*/{
+  margin:auto;
+  max-width:980px;
+}
+
+.dogSlidesSection
+/* .w3-code */{
+  margin-top:16px;
+  margin-bottom:16px;
+}
+
+#DogDetailSlides{
+  max-width:500px;  
+  height:400px;
+  text-align: center;
+}
+
+#DogDetailSlides .imgSlides{
+  margin: auto;
+  /* width:100%; */
+  max-height:400px;
+  /* display:none; */
+}
+
+#dog_detail_field{
+  padding-top:10px;
+  font-weight: 400;
+  font-size: 1.2em;;
+}
+
+#dog_detail_field ul li{
+  margin-top: 10px;;
+}
+
+#showComments>div{
+  margin-top: 20px;
+  border:2px solid #000;
+  max-width: 700px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #6bdfa5;
+  color:#333;
+}
+
+/* #showDogComments>div>div.comment_head{ */
+div.comment_head{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  border-bottom:2px solid #000;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+/* #showDogComments>div>div.comment_content{ */
+div.comment_content{
+  padding: 5px;
+}
+
+
+#adopButtonContainer{
+  margin-top: 10px;
+  text-align: center;
+}
+
+#adopButton{
+  font-size: 1.2em;
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 5px;
+  border: #fff;
+  background-color: #f99;
+  color:#fff;
+}
+
+#adopButton:hover{
+  background-color: #f58888;
+}
+
+/* end of dogdetail page */
+
+/*start of contact page content*/
+form #first_field label,
+p {
+  margin-top: 20px;
+}
+
+form #first_field label:first-of-type {
+  margin-top: 0px;
+}
+
+/* class for change Note paragraph*/
+.note {
+  margin-left: 10px;
+  font-size: 0.5em;
+}
+
+/* reset textarea label */
+form p label.textaLabel {
+  text-align: left;
+}
+
+.textaLabel {
+  margin-bottom: 0.5em;
+}
+
+form fieldset.redBorder {
+  border-radius: 10px;
+  padding-top: 0;
+}
+
+/* class for the request span */
+.req {
+  color: #f00;
+}
+
+/* only affect the span not inside em tag */
+form #first_field p span:not(em span) {
+  margin-left: 3px;
+  font-size: 0.7em;
+}
+
+form #firstField input[type="radio"],
+form #firstField input[type="text"],
+form #firstField input[type="email"],
+#firstField textarea {
+  margin-top: 7px;
+}
+
+form #firstField 
+input[type="radio"]:not(form input[type="radio"]:nth-of-type(1)) {
+  margin-left: 15px;
+}
+
+/* adjust line spaceing for radio and checkbox */
+form #firstField input[type="radio"]+label {
+  line-height: 1.6em;
+  margin-left: 5px;
+}
+
+/* change all input box appearance */
+form #firstField input[type="text"],
+form #firstField input[type="email"] {
+  width: 410px;
+  padding: .6em;
+  font-size: 0.9em;
+  border: 2px solid #fec562;
+  border-radius: 8px;
+}
+
+form #firstField input[type="text"]:focus,
+form #firstField input[type="email"]:focus,
+form p #inquiry:focus {
+  background-color: #eee;
+}
+
+/* change textarea appearance */
+form p #inquiry {
+  font-size: 1.3em;
+  border: 2px solid #fec562;
+  border-radius: 8px;
+  width: 410px;
+  height: 150px;
+}
+
+/* change button appearance */
+input[type="submit"],
+input[type="reset"] {
+  font-size: 1.2em;
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+input[type="submit"] {
+  border: 2px solid #99f;
+  background-color: transparent;
+  color: #99f;
+}
+
+input[type="submit"]:hover,
+/* for mobile device */
+input[type="submit"]:active {
+  background-color: #99f;
+  color: #fff;
+}
+
+input[type="reset"] {
+  border: 2px solid #fec562;
+  background-color: transparent;
+  color: #fec562;
+}
+
+input[type="reset"]:hover,
+/* for mobile device */
+input[type="reset"]:active {
+  background-color: #fec562;
+  color: #fff;
+}
+
+/*end of contact page content*/
+
+/*start of the modal box*/
+#subscribe:checked~#subModal,
+#subscribe:checked~#subOverlay,
+#donate:checked~#donModal,
+#donate:checked~#donOverlay,
+#login:checked~#loginModal,
+#login:checked~#loginOverlay {
+  display: block;
+}
+
+.modalBackground {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 1000;
+}
+
+#subModal,
+#donModal,
+#loginModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  margin-top: -200px;
+  margin-left: -200px;
+  display: none;
+  max-width: 400px;
+  height: 400px;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 1001;
+}
+
+.modalHeader {
+  background-color: #de717b;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.modalHeader label {
+  box-sizing: border-box;
+  border-left: 2px solid #ddd;
+  float: right;
+  line-height: 50px;
+  padding: 0 15px 0 15px;
+  cursor: pointer;
+}
+
+.modalHeader label:hover img {
+  opacity: 0.6;
+}
+
+.modalContent {
+  padding: 0 5%;
+  color: #666;
+}
+
+.modalContent h1 {
+  margin-top: 20px;
+}
+
+.modalContent form p:last-of-type {
+  text-align: center;
+}
+
+.modalContent input[type="text"],
+.modalContent input[type="password"],
+.modalContent input[type="email"] {
+  padding: .6em;
+  font-size: 0.9em;
+  border: 2px solid #bbb;
+  border-radius: 8px;
+  margin-top: 10px;
+  width: 94%;
+}
+
+/*end of the modal box*/
+
+/*start of Registration Form*/
+form #register_field input[type="text"],
+form #register_field input[type="password"] {
+  width: 410px;
+  padding: .6em;
+  font-size: 0.9em;
+  border: 2px solid #333;
+  border-radius: 8px;
+}
+
+form #register_field input[type="text"]:focus,
+form #register_field input[type="password"]:focus {
+  background-color: #eee;
+}
+
+.reg_button {
+  font-size: 1.2em;
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 5px;
+  border: 2px solid #3e51f8;
+  background-color: transparent;
+  color: #3e51f8;
+}
+
+.reg_button:hover,
+/* for mobile device */
+.reg_button:active {
+  background-color: #3e51f8;
+  color: #fff;
+}
+/*end of Registration Form*/
+
+/*start of user_profile page*/
+
+#user_profile th {
+  background-color: #3945af;
+  width: 40%;
+  padding-left: 15px;
+}
+
+#user_info_container {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#user_info_container>div:first-child{
+  -webkit-flex-basis:60%;
+  flex-basis:60%;
+}
+
+#showComments{
+  -webkit-flex-basis: 35%;
+  flex-basis: 35%;
+  margin-left: 20px;
+}
+
+#adoption_records th{
+  background-color: #04414d;
+}
+
+#adoption_records th,
+#adoption_records td{
+  padding: 8px;
+}
+
+/*end of user_profile page*/
+
+#loginAndSearch a {
+  color: #000;
+}
+
+#loginAndSearch a:active {
+  color: #000;
+}
+
+.loginPage p:last-of-type {
+  text-align: center;
+}
+
+.loginPage input[type="text"],
+.loginPage input[type="password"] {
+  padding: .6em;
+  font-size: 0.9em;
+  border: 2px solid #bbb;
+  border-radius: 8px;
+  margin-top: 10px;
+  width: 40%;
+}
+
+/*Boostrap 5 alert CSS*/
+.alert-flesh {
+  position: relative;
+  padding: 1rem 1rem;
+  /* margin-bottom: 1rem; */
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-flesh-dismissible {
+  padding-right: 3rem;
+}
+
+.alert-flesh-dismissible .flesh-btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 1.25rem 1rem;
+}
+
+.alert-flesh-primary {
+  color: #084298;
+  background-color: #cfe2ff;
+  border-color: #b6d4fe;
+}
+
+.alert-flesh-primary .alert-flesh-link {
+  color: #06357a;
+}
+
+.alert-flesh-success {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+}
+
+.alert-flesh-success .alert-flesh-link {
+  color: #0c4128;
+}
+
+.alert-flesh-info {
+  color: #055160;
+  background-color: #cff4fc;
+  border-color: #b6effb;
+}
+
+.alert-flesh-info .alert-flesh-link {
+  color: #04414d;
+}
+
+.alert-flesh-warning {
+  color: #664d03;
+  background-color: #fff3cd;
+  border-color: #ffecb5;
+}
+
+.alert-flesh-warning .alert-flesh-link {
+  color: #523e02;
+}
+
+.alert-flesh-danger {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
+
+.alert-flesh-danger .alert-flesh-link {
+  color: #6a1a21;
+}
+
+.flesh-btn-close {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em 0.25em;
+  color: #000;
+  background: transparent 
+  url(
+    "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 \
+16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 \
+14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 \
+9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 \
+010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+  border: 0;
+  border-radius: 0.25rem;
+  opacity: 0.5;
+}
+
+.flesh-btn-close:hover {
+  color: #000;
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+.flesh-btn-close:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  opacity: 1;
+}
+
+.flesh-btn-close:disabled, .flesh-btn-close.disabled {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  opacity: 0.25;
+}
+
+.flesh-btn-close-white {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.fade-flesh {
+  transition: opacity 0.15s linear;
+}
+
+.fade-flesh .show-flesh {
+  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-flesh {
+    transition: none;
+  }
+}
+
+/*End of Bootstrap 5 CSS*/
+
+/* start of animal information page */
+#ani_table thead tr th{
+  padding-left: 10px;
+  background-color:#3945af;
+}
+/* end of animal information page */
+
+
+@media all and (max-width: 890px){
+  #adoption_records tr:first-child{ 
+		display: none;
+	}
+
+  table#adoption_records,   
+  table#adoption_records thead,   
+  table#adoption_records tbody,    
+  table#adoption_records th, 
+  table#adoption_records td,
+  table#adoption_records tr {   
+    display: block; 
+  }
+
+  #adoption_records td {
+    position: relative;
+    padding-left: 50%;
+  }
+  
+  #adoption_records td:before { 
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+    font-weight: 700;
+    margin-top: 8px;
+	}
+
+  /*Add label to rows*/
+  #adoption_records td:nth-of-type(1):before { 
+    content: "Adoption ID:";        
+  }
+  
+	#adoption_records td:nth-of-type(2):before { 
+    content: "Animal ID:";    
+  }
+	#adoption_records td:nth-of-type(3):before { 
+    content: "Animal Name:";    
+  }
+	#adoption_records td:nth-of-type(4):before { 
+    content: "Approximately Monthly Expense:";    
+  }
+	#adoption_records td:nth-of-type(5):before { 
+    content: "Dewormed:";    
+  }
+	#adoption_records td:nth-of-type(6):before { 
+    content: "Defleaed:";    
+  }
+	#adoption_records td:nth-of-type(7):before { 
+    content: "Requirements	:";    
+  }
+	#adoption_records td:nth-of-type(8):before { 
+    content: "Status:";    
+  }
+	#adoption_records td:nth-of-type(9):before { 
+    content: "Created At:";    
+  }
+	#adoption_records td:nth-of-type(10):before { 
+    content: "Updated At:";    
+  }
+}
